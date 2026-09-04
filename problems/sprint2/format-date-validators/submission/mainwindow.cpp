@@ -58,6 +58,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     // Установите валидаторы.
+    ui->le_day->setValidator(new QIntValidator(1, 31, this));
+    ui->le_month->setValidator(new QIntValidator(1, 12, this));
+    ui->le_year->setValidator(new QIntValidator(1, 9999, this));
 
     SetError("Некорректная дата");
 }
@@ -97,14 +100,25 @@ void MainWindow::SetError(const QString& err_text)
 void MainWindow::on_le_day_textChanged(const QString&)
 {
     // Пользователь изменил день. Реализуйте слот.
+    CheckValidity(ui->le_day);
 }
 
 void MainWindow::on_le_month_textChanged(const QString&)
 {
     // Пользователь изменил месяц. Реализуйте слот.
+    CheckValidity(ui->le_month);
 }
 
 void MainWindow::on_le_year_textChanged(const QString&)
 {
     // Пользователь изменил год. Реализуйте слот.
+    CheckValidity(ui->le_year);
+}
+
+void MainWindow::CheckValidity(QLineEdit* elem) {
+    if (elem->hasAcceptableInput()) {
+        elem->setStyleSheet("border:1px solid transparent");
+    } else {
+        elem->setStyleSheet("border:1px solid red");
+    }
 }

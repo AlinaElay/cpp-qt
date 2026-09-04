@@ -11,3 +11,14 @@ MainWindow::MainWindow(QWidget* parent)
 MainWindow::~MainWindow() {
     delete ui;
 }
+
+void MainWindow::on_btn_start_clicked()
+{
+    const QString str = ui->le_input->text();
+    QString rts = str;
+    for(int i = 0; i <= str.size() - 1; i++) {
+        rts[i] = str[str.size() - 1 - i];
+    }
+    ui->le_input->setText(rts);
+}
+

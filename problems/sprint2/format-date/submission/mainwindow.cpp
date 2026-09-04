@@ -104,22 +104,31 @@ void MainWindow::SetError(const QString& err_text)
 void MainWindow::on_le_date_textChanged(const QString&)
 {
     // Пользователь изменил дату. Реализуйте слот.
+    auto arr = ui->le_date->text().split(".");
+    if (arr.size() == 3) {
+        ui->le_day->setText(arr[0]);
+        ui->le_month->setText(arr[1]);
+        ui->le_year->setText(arr[2]);
+    }
 }
 
 void MainWindow::on_le_day_textChanged(const QString&)
 {
     CheckValidity(ui->le_day);
     // Пользователь изменил день. Реализуйте слот.
+    ShowFormattedDate();
 }
 
 void MainWindow::on_le_month_textChanged(const QString&)
 {
     CheckValidity(ui->le_month);
     // Пользователь изменил месяц. Реализуйте слот.
+    ShowFormattedDate();
 }
 
 void MainWindow::on_le_year_textChanged(const QString&)
 {
     CheckValidity(ui->le_year);
     // Пользователь изменил год. Реализуйте слот.
+    ShowFormattedDate();
 }

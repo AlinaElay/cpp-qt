@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QLineEdit>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,6 +16,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    static void CheckValidity(QLineEdit* elem);
+
 private:
     QString GetFormatType1(int day, int month, int year);
     QString GetFormatType2(int day, int month, int year);
@@ -23,6 +26,7 @@ private:
     QString GetStrNumDays(int num_days, int year);
     void ShowFormattedDate();
     void SetError(const QString& err_text);
+        //static void CheckValidity(QLineEdit* elem);
 
 private slots:
     void on_le_day_textChanged(const QString&);

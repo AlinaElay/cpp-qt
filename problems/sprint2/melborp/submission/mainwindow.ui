@@ -25,14 +25,37 @@
   <property name="windowTitle">
    <string>MELBORP</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>70</y>
+      <width>110</width>
+      <height>56</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLineEdit" name="le_input"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_start">
+       <property name="text">
+        <string>melborp!</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>340</width>
-     <height>24</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
