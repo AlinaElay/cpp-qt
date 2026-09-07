@@ -17,6 +17,8 @@
 #include <string>
 #include <iostream>
 
+#include<prac/QFileDialog>
+
 using namespace std;
 
 namespace {
