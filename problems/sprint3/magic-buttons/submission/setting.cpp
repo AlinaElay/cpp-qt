@@ -10,8 +10,11 @@ Setting::Setting(QWidget *parent) :
     setWindowFlags(Qt::WindowStaysOnTopHint);
 
     for (const auto& action : actions_) {
-        ui->cb_action->addItem(action.name);
+        //ui->cb_action->addItem(action.name);
     }
+    ui->cb_action->addItem("Открыть URL");
+    ui->cb_action->addItem("открыть папку");
+
 }
 
 Setting::~Setting() {
