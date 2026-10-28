@@ -31,7 +31,7 @@ public:
     QPushButton *btn_equal;
     QPushButton *btn_add;
     QPushButton *btn_power;
-    QPushButton *btn_extra;
+    QPushButton *tb_extra;
     QPushButton *btn_five;
     QPushButton *btn_seven;
     QPushButton *btn_negate;
@@ -107,12 +107,12 @@ public:
 
         gridLayout->addWidget(btn_power, 3, 4, 1, 1);
 
-        btn_extra = new QPushButton(centralwidget);
-        btn_extra->setObjectName("btn_extra");
-        sizePolicy.setHeightForWidth(btn_extra->sizePolicy().hasHeightForWidth());
-        btn_extra->setSizePolicy(sizePolicy);
+        tb_extra = new QPushButton(centralwidget);
+        tb_extra->setObjectName("tb_extra");
+        sizePolicy.setHeightForWidth(tb_extra->sizePolicy().hasHeightForWidth());
+        tb_extra->setSizePolicy(sizePolicy);
 
-        gridLayout->addWidget(btn_extra, 8, 0, 1, 1);
+        gridLayout->addWidget(tb_extra, 8, 0, 1, 1);
 
         btn_five = new QPushButton(centralwidget);
         btn_five->setObjectName("btn_five");
@@ -277,7 +277,7 @@ public:
         btn_equal->setText(QCoreApplication::translate("MainWindow", "=", nullptr));
         btn_add->setText(QCoreApplication::translate("MainWindow", "+", nullptr));
         btn_power->setText(QCoreApplication::translate("MainWindow", "x\312\270", nullptr));
-        btn_extra->setText(QCoreApplication::translate("MainWindow", ".", nullptr));
+        tb_extra->setText(QCoreApplication::translate("MainWindow", ".", nullptr));
         btn_five->setText(QCoreApplication::translate("MainWindow", "5", nullptr));
         btn_seven->setText(QCoreApplication::translate("MainWindow", "7", nullptr));
         btn_negate->setText(QCoreApplication::translate("MainWindow", "\302\261", nullptr));
@@ -298,12 +298,12 @@ public:
         btn_eight->setText(QCoreApplication::translate("MainWindow", "8", nullptr));
         btn_two->setText(QCoreApplication::translate("MainWindow", "2", nullptr));
         l_formula->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        cmb_controller->setItemText(0, QCoreApplication::translate("MainWindow", "double", nullptr));
-        cmb_controller->setItemText(1, QCoreApplication::translate("MainWindow", "float", nullptr));
-        cmb_controller->setItemText(2, QCoreApplication::translate("MainWindow", "uint8_t", nullptr));
-        cmb_controller->setItemText(3, QCoreApplication::translate("MainWindow", "int", nullptr));
-        cmb_controller->setItemText(4, QCoreApplication::translate("MainWindow", "int64_t", nullptr));
-        cmb_controller->setItemText(5, QCoreApplication::translate("MainWindow", "size_t", nullptr));
+        cmb_controller->setItemText(0, QCoreApplication::translate("MainWindow", "uint8_t", nullptr));
+        cmb_controller->setItemText(1, QCoreApplication::translate("MainWindow", "int", nullptr));
+        cmb_controller->setItemText(2, QCoreApplication::translate("MainWindow", "int64_t", nullptr));
+        cmb_controller->setItemText(3, QCoreApplication::translate("MainWindow", "size_t", nullptr));
+        cmb_controller->setItemText(4, QCoreApplication::translate("MainWindow", "double", nullptr));
+        cmb_controller->setItemText(5, QCoreApplication::translate("MainWindow", "float", nullptr));
         cmb_controller->setItemText(6, QCoreApplication::translate("MainWindow", "Rational", nullptr));
 
     } // retranslateUi

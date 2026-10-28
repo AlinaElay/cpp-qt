@@ -3,7 +3,6 @@
 #include <iostream>
 #include <cstdint>
 
-// Реализуйте класс Rational.
 class Rational {
 public:
     Rational() = default;
@@ -131,29 +130,21 @@ private:
 inline std::istream& operator>>(std::istream& is, Rational& r) {
     if (!(is >> r.numerator_)){
         is.setstate(std::ios::failbit);
-        //std::cout << "1" << std::endl;
         return is;
     }
     char op;
     if (!(is >> std::ws >> op)) {
-        //is.setstate(std::ios::failbit);
-        //std::cout << op << "3" << std::endl;
         is.clear();
         return is;
     }
     if (op != '/') {
-        //is.setstate(std::ios::failbit);
-        //std::cout << r.numerator_;
-        //std::cout << op << "4" << std::endl;
         is.clear();
         return is;
     }
     if (!(is >> r.denominator_) || r.denominator_ == 0) {
         is.setstate(std::ios::failbit);
-        //std::cout << "4" << std::endl;
         return is;
     }
-    //std::cout << "4" << std::endl;
     return is;
 }
 

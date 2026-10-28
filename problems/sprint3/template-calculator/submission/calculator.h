@@ -1,4 +1,3 @@
-
 #pragma once
 
 #include <string>
@@ -8,6 +7,26 @@
 #include "pow.h"
 
 using Error = std::string;
+
+template<typename Number>
+Number PowTemplate(Number working_number, Number n) {
+    return IntegerPow(working_number, n);
+}
+
+template<>
+Rational PowTemplate<Rational>(Rational working_number, Rational n) {
+    return Pow(working_number, n);
+}
+
+template<>
+float PowTemplate<float>(float working_number, float n) {
+    return std::pow(working_number, n);
+}
+
+template<>
+double PowTemplate<double>(double working_number, double n) {
+    return std::pow(working_number, n);
+}
 
 template<class Number>
 class Calculator {
@@ -53,7 +72,7 @@ public:
             }
         }
         if constexpr (std::is_same_v<Number, Rational>) {
-            if (n.GetDemominator() != 1) {
+            if (n.GetDenominator() != 1) {
                 return "Fractional power is not supported";
             }
         }
@@ -62,7 +81,7 @@ public:
                 return "Integer negative power";
             }
         }
-        working_number_ = ::Pow(working_number_, n);
+        working_number_ = ::PowTemplate(working_number_, n);
         return std::nullopt;
     }
 
@@ -71,11 +90,11 @@ public:
     }
 
     void Load() {
-        working_number_ = memory_;
+        working_number_ = memory_.value();
     }
 
-    bool HasMem() const {
-        return memory_ == std::nullopt ? false : true;
+    bool GetHasMem() const {
+        return memory_.has_value();
     }
 
     std::string GetNumberRepr() const {
@@ -84,15 +103,7 @@ public:
 
 private:
     Number working_number_ = 0;
-    std::optional<Number> memory_ = 0;
+    std::optional<Number> memory_ = std::nullopt;
 };
 
-template<class Number>
-Number Pow (Number working_number, Number n) {
-    return IntegerPow(working_number, n);
-}
 
-template<>
-Rational Pow<Rational>(Rational working_number, Rational n) {
-    return Pow(working_number, n);
-}

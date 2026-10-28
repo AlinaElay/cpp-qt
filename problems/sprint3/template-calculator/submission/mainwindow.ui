@@ -92,7 +92,7 @@
      </widget>
     </item>
     <item row="8" column="0">
-     <widget class="QPushButton" name="btn_extra">
+     <widget class="QPushButton" name="tb_extra">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -342,16 +342,6 @@
      <widget class="QComboBox" name="cmb_controller">
       <item>
        <property name="text">
-        <string>double</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>float</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
         <string>uint8_t</string>
        </property>
       </item>
@@ -368,6 +358,16 @@
       <item>
        <property name="text">
         <string>size_t</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>double</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>float</string>
        </property>
       </item>
       <item>

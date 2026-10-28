@@ -21,6 +21,13 @@ public:
 
 private slots:
 
+    void on_btn_pop_back_clicked();
+    void on_btn_push_back_clicked();
+    void on_btn_clear_clicked();
+    void on_btn_days_of_week_clicked();
+
+    void on_btn_month_clicked();
+
 private:
     void ApplyModel();
 
